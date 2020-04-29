@@ -8,8 +8,10 @@ class Weather {
     // Fetch weather from API
     async getWeather() {
         const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${this.city},${this.state}`);
+        
         const jsonResponse = await response.json();
-        console.info('weather results in json format', jsonResponse);
+        
+        return responseData.current_observation;
     }
 
     // Change weather location
